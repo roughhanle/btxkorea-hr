@@ -1,0 +1,92 @@
+{
+  "epdn_score": {
+    "E": 4,
+    "P": 3,
+    "D": 2,
+    "N": 1
+  },
+  "skill_score": {
+    "formula": "round((q1 + q2 + q3) / 3, 2)",
+    "min": 1.0,
+    "max": 4.0
+  },
+  "category_score": {
+    "formula": "sum(6 skill scores)",
+    "min": 6,
+    "expected": 18,
+    "max": 24
+  },
+  "total_score": {
+    "formula": "sum(5 category scores)",
+    "min": 30,
+    "expected": 90,
+    "max": 120
+  },
+  "achievement_rate": {
+    "formula": "round((total / 90) * 100, 1)",
+    "expected_baseline": 90
+  },
+  "overall_grade_thresholds": [
+    {
+      "grade": "우수",
+      "min_rate": 120,
+      "color": "#C8E6C9"
+    },
+    {
+      "grade": "안정",
+      "min_rate": 100,
+      "color": "#BBDEFB"
+    },
+    {
+      "grade": "보완 필요",
+      "min_rate": 80,
+      "color": "#FFE082"
+    },
+    {
+      "grade": "집중 육성",
+      "min_rate": 0,
+      "color": "#FFCDD2"
+    }
+  ],
+  "category_grade_thresholds": [
+    {
+      "grade": "우수",
+      "min_rate": 120,
+      "min_score": 21.6
+    },
+    {
+      "grade": "안정",
+      "min_rate": 100,
+      "min_score": 18.0
+    },
+    {
+      "grade": "보완 필요",
+      "min_rate": 80,
+      "min_score": 14.4
+    },
+    {
+      "grade": "집중 육성",
+      "min_rate": 0,
+      "min_score": 0.0
+    }
+  ],
+  "prescription_id_map": {
+    "Ⅰ. 공통": "COM",
+    "Ⅱ. 설계": "DES",
+    "Ⅲ. 운영": "OPS",
+    "Ⅳ. 평가": "EVL",
+    "Ⅴ. 개선": "IMP"
+  },
+  "grade_code_map": {
+    "우수": "E",
+    "안정": "S",
+    "보완 필요": "N",
+    "집중 육성": "F"
+  },
+  "grade_messages": {
+    "우수": "직책 기대를 상회 — 리더십 확장·후임 멘토링 역할 부여 권장",
+    "안정": "직책 기대 충족 — 약점 카테고리 집중 보완·E 수준 도전 과제",
+    "보완 필요": "직책 기대 미달 — OJT 강화·코칭 정기화·표준 매뉴얼 학습",
+    "집중 육성": "기본기 부족 — 기본 직무 교육·1:1 멘토링·점진적 책임 부여"
+  }
+}

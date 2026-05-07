@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 빌드 산출물 (Netlify Drop용 zip — 저장소엔 불필요)
+*.zip
+
+# 로컬 서버 로그
+*.log

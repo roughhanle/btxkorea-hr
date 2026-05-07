@@ -1,0 +1,46 @@
+# BTXKOREA 직책자 스킬 진단 — GitHub Pages 자동 배포
+#
+# main 브랜치에 push 될 때마다 standalone/ 폴더를 정적 사이트로 배포한다.
+# 첫 배포 후 발급되는 URL: https://<username>.github.io/<repo-name>/
+#
+# 사전 준비 (저장소 Settings):
+#   1. Settings → Pages → Source: "GitHub Actions" 선택
+#   2. (비공개 저장소인 경우) Pages는 GitHub Pro/Team 이상 필요
+name: Deploy standalone to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: # 수동 실행도 허용
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 동시 배포 1개로 제한 — 새 푸시가 들어오면 진행 중인 배포는 중단
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload standalone/ as Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: standalone
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

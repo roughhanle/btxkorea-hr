@@ -1,0 +1,247 @@
+{
+  "role_job_limits": {
+    "팀장": {
+      "min": 1,
+      "max": 2,
+      "auto_integrated_threshold": 3
+    },
+    "사업부장": {
+      "min": 1,
+      "max": 3,
+      "auto_integrated_threshold": 4
+    },
+    "본부장": {
+      "auto_integrated": true
+    }
+  },
+  "role_codes": {
+    "팀장": "T",
+    "사업부장": "D",
+    "본부장": "H"
+  },
+  "job_codes": {
+    "사외물류": "WO",
+    "사내물류": "IL",
+    "조립·포장": "AP",
+    "운송납품": "TR",
+    "통합": "IN"
+  },
+  "categories": [
+    "Ⅰ. 공통",
+    "Ⅱ. 설계",
+    "Ⅲ. 운영",
+    "Ⅳ. 평가",
+    "Ⅴ. 개선"
+  ],
+  "skill_selection": {
+    "case_single_job": {
+      "description": "팀장·사업부장 1개 직무 선택",
+      "Ⅰ. 공통": {
+        "common_skills": [
+          "C-01",
+          "C-02",
+          "C-03",
+          "C-04",
+          "C-05",
+          "C-06"
+        ],
+        "job_skills": []
+      },
+      "Ⅱ. 설계": {
+        "common_skills": [
+          "S-01",
+          "S-02",
+          "S-03"
+        ],
+        "job_skill_pattern": "S-{job_code}-{n}",
+        "n_range": [
+          1,
+          2,
+          3
+        ]
+      },
+      "Ⅲ. 운영": {
+        "common_skills": [
+          "O-01",
+          "O-02",
+          "O-03"
+        ],
+        "job_skill_pattern": "O-{job_code}-{n}",
+        "n_range": [
+          1,
+          2,
+          3
+        ]
+      },
+      "Ⅳ. 평가": {
+        "common_skills": [
+          "E-01",
+          "E-02",
+          "E-03"
+        ],
+        "job_skill_pattern": "E-{job_code}-{n}",
+        "n_range": [
+          1,
+          2,
+          3
+        ]
+      },
+      "Ⅴ. 개선": {
+        "common_skills": [
+          "I-01",
+          "I-02",
+          "I-03"
+        ],
+        "job_skill_pattern": "I-{job_code}-{n}",
+        "n_range": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    "case_two_jobs": {
+      "description": "팀장·사업부장 2개 직무 선택 — 공통 직무카테고리 스킬 빠짐",
+      "Ⅰ. 공통": {
+        "common_skills": [
+          "C-01",
+          "C-02",
+          "C-03",
+          "C-04",
+          "C-05",
+          "C-06"
+        ],
+        "job_skills": []
+      },
+      "Ⅱ. 설계": {
+        "common_skills": [],
+        "job_skill_pattern": "S-{job_code}-{n}",
+        "n_range": [
+          1,
+          2,
+          3
+        ]
+      },
+      "Ⅲ. 운영": {
+        "common_skills": [],
+        "job_skill_pattern": "O-{job_code}-{n}",
+        "n_range": [
+          1,
+          2,
+          3
+        ]
+      },
+      "Ⅳ. 평가": {
+        "common_skills": [],
+        "job_skill_pattern": "E-{job_code}-{n}",
+        "n_range": [
+          1,
+          2,
+          3
+        ]
+      },
+      "Ⅴ. 개선": {
+        "common_skills": [],
+        "job_skill_pattern": "I-{job_code}-{n}",
+        "n_range": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    "case_integrated": {
+      "description": "본부장 / 3개 이상 직무 — 통합 트랙 자동 적용",
+      "Ⅰ. 공통": {
+        "common_skills": [
+          "C-01",
+          "C-02",
+          "C-03",
+          "C-04",
+          "C-05",
+          "C-06"
+        ],
+        "integrated_skills": []
+      },
+      "Ⅱ. 설계": {
+        "common_skills": [
+          "S-01",
+          "S-02",
+          "S-03"
+        ],
+        "integrated_skills": [
+          "S-IN-01",
+          "S-IN-02",
+          "S-IN-03"
+        ]
+      },
+      "Ⅲ. 운영": {
+        "common_skills": [
+          "O-01",
+          "O-02",
+          "O-03"
+        ],
+        "integrated_skills": [
+          "O-IN-01",
+          "O-IN-02",
+          "O-IN-03"
+        ]
+      },
+      "Ⅳ. 평가": {
+        "common_skills": [
+          "E-01",
+          "E-02",
+          "E-03"
+        ],
+        "integrated_skills": [
+          "E-IN-01",
+          "E-IN-02",
+          "E-IN-03"
+        ]
+      },
+      "Ⅴ. 개선": {
+        "common_skills": [
+          "I-01",
+          "I-02",
+          "I-03"
+        ],
+        "integrated_skills": [
+          "I-IN-01",
+          "I-IN-02",
+          "I-IN-03"
+        ]
+      }
+    }
+  },
+  "role_target_epdn": {
+    "본부장": {
+      "Ⅰ. 공통": "E",
+      "Ⅱ. 설계": "P",
+      "Ⅲ. 운영": "P",
+      "Ⅳ. 평가": "P",
+      "Ⅴ. 개선": "E"
+    },
+    "사업부장": {
+      "Ⅰ. 공통": "P",
+      "Ⅱ. 설계": "P",
+      "Ⅲ. 운영": "P",
+      "Ⅳ. 평가": "P",
+      "Ⅴ. 개선": "P"
+    },
+    "팀장": {
+      "Ⅰ. 공통": "P",
+      "Ⅱ. 설계": "D",
+      "Ⅲ. 운영": "P",
+      "Ⅳ. 평가": "D",
+      "Ⅴ. 개선": "D"
+    }
+  },
+  "divisions": [
+    "군산",
+    "울산",
+    "인천",
+    "중부",
+    "창원",
+    "본사"
+  ]
+}
